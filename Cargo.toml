@@ -1,0 +1,19 @@
+[package]
+name = "k8s-snapshot-manager"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+kube = { version = "0.87.1", features = ["runtime"] }
+k8s-openapi = { version = "0.20.0", features = ["v1_28"] }
+tokio = { version = "1.35.1", features = ["full"] }
+sqlx = { version = "0.7.3", features = ["mysql", "runtime-tokio-native-tls"] }
+reqwest = { version = "0.11.23", features = ["json"] }
+serde = { version = "1.0.193", features = ["derive"] }
+
+
+[[bin]]
+name = "encrypt_password"
+path = "src/bin/encrypt_password.rs"
